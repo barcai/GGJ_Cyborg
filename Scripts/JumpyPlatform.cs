@@ -10,9 +10,14 @@ public class JumpyPlatform : MonoBehaviour {
 	public float ymax = 300;
 
 	void OnCollisionEnter2D(Collision2D coll) {
-		if (coll.gameObject.tag == "Player") {
+		if (coll.gameObject.tag == "Player" && extra_jump > 0) {
 			Rigidbody2D rb = coll.gameObject.GetComponent<Rigidbody2D>();
-			rb.AddForce(new Vector2(Random.Range(xmin, xmax), Random.Range(ymin, ymax)));
+			if (Random.Range(0,1) > 0.5) {
+				Vector2 movement = new Vector2(Random.Range(-xmin, -xmax), Random.Range(ymin, ymax));
+			} else {
+				Vector2 movement = new Vector2(Random.Range(xmin, xmax), Random.Range(ymin, ymax));
+			}
+			rb.AddForce(movement);
 			extra_jump--;
 		}
 	}
