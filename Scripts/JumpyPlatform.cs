@@ -13,10 +13,11 @@ public class JumpyPlatform : MonoBehaviour {
 		if (coll.gameObject.tag == "Player" && extra_jump > 0) {
 
 			Rigidbody2D rb = coll.gameObject.GetComponent<Rigidbody2D>();
+			Vector2 movement;
 			if (Random.Range(0,1) > 0.5) {
-				Vector2 movement = new Vector2(Random.Range(-xmin, -xmax), Random.Range(ymin, ymax));
+				movement = new Vector2(Random.Range(-xmin, -xmax), Random.Range(ymin, ymax));
 			} else {
-				Vector2 movement = new Vector2(Random.Range(xmin, xmax), Random.Range(ymin, ymax));
+				movement = new Vector2(Random.Range(xmin, xmax), Random.Range(ymin, ymax));
 			}
 			rb.AddForce(movement);
 			extra_jump--;
