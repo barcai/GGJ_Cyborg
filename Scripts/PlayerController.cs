@@ -30,6 +30,8 @@ public class PlayerController : MonoBehaviour {
 			onGround = false;
 		}
 
+		Random.ddddddddd
+
 		// Braking
 		if (Mathf.Abs(Input.GetAxis("Horizontal")) < 0.5)
 		{

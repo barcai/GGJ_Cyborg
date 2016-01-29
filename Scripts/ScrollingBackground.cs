@@ -3,13 +3,14 @@ using System.Collections;
 
 public class ScrollingBackground : MonoBehaviour {
 
-	public float speed = 0.5f;
+	public float speed = 0.1f;
+
 
 	void Update() {
-		Vector2 offset = new Vector2(Time.time * speed, 0);
-
-		GetComponent<Renderer>().material.mainTextureOffset = offset;
-
+		if (Input.GetAxis("Horizontal") != 0){
+			Vector2 offset = new Vector2(-speed * Input.GetAxis("Horizontal"), 0);
+			GetComponent<Renderer>().material.mainTextureOffset += offset;
+		}
 
 	}
 }
