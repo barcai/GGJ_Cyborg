@@ -8,10 +8,8 @@ public class JumpyPlatform : MonoBehaviour {
 	void OnCollisionEnter2D(Collision2D coll) {
 		if (coll.gameObject.tag == "Player") {
 			Rigidbody2D rb = coll.gameObject.GetComponent<Rigidbody2D>();
-			while (extra_jump > 0) {
-				rb.AddForce(new Vector2(Random.Range(10, 50), Random.Range(10, 100)));
-				extra_jump--;
-            }
+			rb.AddForce(new Vector2(Random.Range(10, 50), Random.Range(10, 100)));
+			extra_jump--;
 		}
 	}
 }
