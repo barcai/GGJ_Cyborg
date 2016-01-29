@@ -5,8 +5,10 @@ public class PlayerController : MonoBehaviour {
 
 	public float speed = 100;
 	public float speedLimit = 30;
+	public float jumpHeight = 100;
 
 	private Rigidbody2D rb;
+	public bool onGround = true;
 
 	void Start()
 	{
@@ -20,10 +22,18 @@ public class PlayerController : MonoBehaviour {
 		// Basic movement
 		Vector2 movement = new Vector2(Input.GetAxis("Horizontal"), 0);
 		rb.AddForce(movement * speed);
-		// Braking
-		if (Mathf.Abs(Input.GetAxis("Horizontal")) < 0.2)
+
+		// Jumping
+		if (onGround && Input.GetButton("Jump"))
 		{
-			rb.velocity = rb.velocity * 1/2;
+			rb.AddForce(new Vector2(0, jumpHeight));
+			onGround = false;
+		}
+
+		// Braking
+		if (Mathf.Abs(Input.GetAxis("Horizontal")) < 0.5)
+		{
+			rb.velocity = new Vector2(rb.velocity.x * 1/2, rb.velocity.y);
 		}
 	
 		// Max speed
@@ -34,6 +44,14 @@ public class PlayerController : MonoBehaviour {
 		else if (rb.velocity.x < -speedLimit)
 		{
 			rb.velocity = new Vector2(-speedLimit, rb.velocity.y);
+		}
+	}
+
+	void OnCollisionStay2D(Collision2D obj)
+	{
+		if (obj.gameObject.tag == "Ground")
+		{
+			onGround = true;
 		}
 	}
 }
