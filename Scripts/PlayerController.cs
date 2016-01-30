@@ -72,12 +72,12 @@ public class PlayerController : MonoBehaviour {
 		}
 	}
 
-	void OnCollisionStay2D(Collision2D obj)
+	void OnCollisionEnter2D(Collision2D obj)
 	{
 		if (obj.gameObject.tag == "Ground")
 		{
-			onGround = true;
-			animator.SetBool("JumpButtonPressed", false);
+            onGround = true;
+            animator.SetBool("JumpButtonPressed", false);
 		}
 	}
 }
