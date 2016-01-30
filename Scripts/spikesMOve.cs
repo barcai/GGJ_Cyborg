@@ -17,10 +17,9 @@ public class spikesMOve : MonoBehaviour {
     {
         if (other.gameObject.tag == "Player")
         {
-            Debug.Log("player touched me!");
-            
             Animator anim = GetComponent<Animator>();
             anim.SetBool("isTouchingPlayer", true);
+			other.gameObject.GetComponent<PlayerLife>().life = 0;
         }
     }
 }

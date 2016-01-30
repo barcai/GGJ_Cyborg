@@ -11,7 +11,7 @@ public class CameraController : MonoBehaviour {
 	{
 		if (trackPlayer)
 		{
-			Vector3 position = new Vector3(player.transform.position.x, 0.4f, -5);
+			Vector3 position = new Vector3(player.transform.position.x, 1.4f, -5);
 			transform.position = position;
 		}
 	}

@@ -12,6 +12,7 @@ public class PlayerLife : MonoBehaviour {
 		if (life == 0)
 		{
 			deathImage.SetActive (true);
+			GetComponent<PlayerController>().canControl = false;
 		}	
 	}
 }

@@ -18,7 +18,7 @@ public class SpawnTrees : MonoBehaviour {
 
             GameObject instance = GameObject.Instantiate(prefab);
             instance.transform.parent = this.transform;
-            float posY = instance.transform.position.y + instance.GetComponent<SpriteRenderer>().sprite.bounds.size.y / 2f - 0.9f + Random.Range(0, 0.3f);
+            float posY = instance.transform.position.y + instance.GetComponent<SpriteRenderer>().sprite.bounds.size.y / 2f - 2f + Random.Range(0, 0.3f);
             instance.transform.position = new Vector3(posX, posY, instance.transform.position.z);
 
 
