@@ -35,7 +35,7 @@ public class TextPlay : MonoBehaviour {
 		if (index == selectionIndex) 
 		{
 			playText = false;
-			buttons.GetComponent<Canvas>().enabled = true;
+			buttons.SetActive(true);
 		}
 	}
 
