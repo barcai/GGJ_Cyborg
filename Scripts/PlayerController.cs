@@ -4,7 +4,7 @@ using System.Collections;
 public class PlayerController : MonoBehaviour {
 
 	public float speed = 100;
-	public float speedLimit = 30;
+    public Vector2 speedLimit = new Vector2(3, 5);
 	public float jumpHeight = 100;
 	public bool canControl = true;
 	public bool onGround = true;
@@ -50,14 +50,18 @@ public class PlayerController : MonoBehaviour {
 			}
 	
 			// Max speed
-			if (rb.velocity.x > speedLimit) {
-				rb.velocity = new Vector2 (speedLimit, rb.velocity.y);
-			} else if (rb.velocity.x < -speedLimit) {
-				rb.velocity = new Vector2 (-speedLimit, rb.velocity.y);
+			if (rb.velocity.x > speedLimit.x) {
+				rb.velocity = new Vector2 (speedLimit.x, rb.velocity.y);
+			} else if (rb.velocity.x < -speedLimit.x) {
+				rb.velocity = new Vector2 (-speedLimit.x, rb.velocity.y);
 			}
+            if (rb.velocity.y > speedLimit.y)
+            {
+                rb.velocity = new Vector2(rb.velocity.x, speedLimit.y);
+            }
 
-			// Kill floor
-			if (rb.position.y < -5)
+            // Kill floor
+            if (rb.position.y < -5)
 			{
 				GetComponent<PlayerLife>().life = 0;
 			}
