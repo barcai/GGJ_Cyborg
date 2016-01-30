@@ -6,9 +6,12 @@ public class PlayerController : MonoBehaviour {
 	public float speed = 100;
 	public float speedLimit = 30;
 	public float jumpHeight = 100;
+	public bool canControl = true;
+	public bool onGround = true;
+
+	public GameObject mCamera;
 
 	private Rigidbody2D rb;
-	public bool onGround = true;
 
 	void Start()
 	{
@@ -19,32 +22,34 @@ public class PlayerController : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () 
 	{
-		// Basic movement
-		Vector2 movement = new Vector2(Input.GetAxis("Horizontal"), 0);
-		rb.AddForce(movement * speed);
+		if (canControl) {
+			mCamera.GetComponentInChildren<ScrollingBackground> ().enabled = true;
 
-		// Jumping
-		if (onGround && Input.GetButton("Jump"))
-		{
-			rb.AddForce(new Vector2(0, jumpHeight));
-			onGround = false;
-		}
-	
+			// Basic movement
+			Vector2 movement = new Vector2 (Input.GetAxis ("Horizontal"), 0);
+			rb.AddForce (movement * speed);
 
-		// Braking
-		if (Mathf.Abs(Input.GetAxis("Horizontal")) < 0.5)
-		{
-			rb.velocity = new Vector2(rb.velocity.x * 1/2, rb.velocity.y);
-		}
+			// Jumping
+			if (onGround && Input.GetButton ("Jump")) {
+				rb.AddForce (new Vector2 (0, jumpHeight));
+				onGround = false;
+			}
+
+			// Braking
+			if (Mathf.Abs (Input.GetAxis ("Horizontal")) < 0.5) {
+				rb.velocity = new Vector2 (rb.velocity.x * 1 / 2, rb.velocity.y);
+			}
 	
-		// Max speed
-		if (rb.velocity.x > speedLimit)
+			// Max speed
+			if (rb.velocity.x > speedLimit) {
+				rb.velocity = new Vector2 (speedLimit, rb.velocity.y);
+			} else if (rb.velocity.x < -speedLimit) {
+				rb.velocity = new Vector2 (-speedLimit, rb.velocity.y);
+			}
+		} 
+		else 
 		{
-			rb.velocity = new Vector2(speedLimit, rb.velocity.y);
-		}
-		else if (rb.velocity.x < -speedLimit)
-		{
-			rb.velocity = new Vector2(-speedLimit, rb.velocity.y);
+			mCamera.GetComponentInChildren<ScrollingBackground>().enabled = false;
 		}
 	}
 
