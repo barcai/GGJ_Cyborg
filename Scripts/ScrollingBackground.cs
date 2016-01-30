@@ -15,12 +15,4 @@ public class ScrollingBackground : MonoBehaviour {
 		}	
 	}
 
-	void OnTriggerStay2D(Collider2D obj)
-	{
-		if (obj.tag == "CameraStopper") 
-		{
-			speed = 0;
-		}
-	}
-
 }

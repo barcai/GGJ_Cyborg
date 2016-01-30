@@ -14,6 +14,7 @@ public class CameraStop : MonoBehaviour {
 			mCamera.GetComponent<CameraController> ().trackPlayer = false;
 			mCamera.GetComponentInChildren<ScrollingBackground>().speed = 0;
 		}
+
     }
 
 	void OnTriggerExit2D(Collider2D obj)
