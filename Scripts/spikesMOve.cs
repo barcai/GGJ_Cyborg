@@ -23,16 +23,4 @@ public class spikesMOve : MonoBehaviour {
             anim.SetBool("isTouchingPlayer", true);
         }
     }
-
-    void OnTrigger2DExit(Collider2D other)
-    {
-        Debug.Log("something left me!");
-        if (other.gameObject.tag == "Player")
-        {
-            Debug.Log("player left me!");
-
-            Animator anim = GetComponent<Animator>();
-            anim.SetBool("isTouchingPlayer", false);
-        }
-    }
 }
