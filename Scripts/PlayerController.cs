@@ -55,6 +55,12 @@ public class PlayerController : MonoBehaviour {
 			} else if (rb.velocity.x < -speedLimit) {
 				rb.velocity = new Vector2 (-speedLimit, rb.velocity.y);
 			}
+
+			// Kill floor
+			if (rb.position.y < -5)
+			{
+				GetComponent<PlayerLife>().life = 0;
+			}
 		} 
 		else 
 		{
