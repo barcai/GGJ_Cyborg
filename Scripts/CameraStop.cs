@@ -13,7 +13,8 @@ public class CameraStop : MonoBehaviour {
 		{
 			mCamera.GetComponent<CameraController> ().trackPlayer = false;
 			mCamera.GetComponentInChildren<ScrollingBackground>().speed = 0;
-		}
+            mCamera.GetComponentInChildren<ScrollingTrees>().speed = 0;
+        }
 		else if (obj.tag == "Cutscene")
 		{
 			GetComponent<PlayerController>().canControl = false;
@@ -30,6 +31,7 @@ public class CameraStop : MonoBehaviour {
 		{
 			mCamera.GetComponent<CameraController> ().trackPlayer = true;
 			mCamera.GetComponentInChildren<ScrollingBackground>().speed = -0.001f;
-		}
+            mCamera.GetComponentInChildren<ScrollingTrees>().speed = 0.035f;
+        }
 	}
 }
