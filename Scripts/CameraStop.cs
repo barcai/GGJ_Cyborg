@@ -4,15 +4,22 @@ using System.Collections;
 public class CameraStop : MonoBehaviour {
 
 	public GameObject mCamera;
+	public GameObject mCanvas;
 	
 	// Update is called once per frame
     void OnTriggerEnter2D(Collider2D obj)
     {
-		Debug.Log ("Collided");
 		if (obj.tag == "CameraStopper") 
 		{
 			mCamera.GetComponent<CameraController> ().trackPlayer = false;
 			mCamera.GetComponentInChildren<ScrollingBackground>().speed = 0;
+		}
+		else if (obj.tag == "Cutscene")
+		{
+			GetComponent<PlayerController>().canControl = false;
+			GetComponent<Rigidbody2D>().velocity = new Vector2(0,0);
+			mCanvas.GetComponent<Canvas>().enabled = true;
+			mCanvas.GetComponent<Canvas>().GetComponent<TextPlay>().playText = true;
 		}
 
     }
