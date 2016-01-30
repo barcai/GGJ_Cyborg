@@ -9,11 +9,19 @@ public class CameraStop : MonoBehaviour {
     void OnTriggerEnter2D(Collider2D obj)
     {
 		Debug.Log ("Collided");
-		if (obj.tag == "CameraStopper") mCamera.GetComponent<CameraController>().trackPlayer = false;
+		if (obj.tag == "CameraStopper") 
+		{
+			mCamera.GetComponent<CameraController> ().trackPlayer = false;
+			mCamera.GetComponentInChildren<ScrollingBackground>().speed = 0;
+		}
     }
 
 	void OnTriggerExit2D(Collider2D obj)
 	{
-		if (obj.tag == "CameraStopper") mCamera.GetComponent<CameraController>().trackPlayer = true;
+		if (obj.tag == "CameraStopper") 
+		{
+			mCamera.GetComponent<CameraController> ().trackPlayer = true;
+			mCamera.GetComponentInChildren<ScrollingBackground>().speed = -0.001f;
+		}
 	}
 }

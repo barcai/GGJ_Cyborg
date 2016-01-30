@@ -29,8 +29,7 @@ public class PlayerController : MonoBehaviour {
 			rb.AddForce(new Vector2(0, jumpHeight));
 			onGround = false;
 		}
-
-		Random.ddddddddd
+	
 
 		// Braking
 		if (Mathf.Abs(Input.GetAxis("Horizontal")) < 0.5)
