@@ -22,9 +22,9 @@ public class Respiration : MonoBehaviour {
 	{
         if (hasLungs)
         {
-            Vector2 movement = new Vector2(Input.GetAxis("Horizontal"), 0);
+            Vector2 movement = gameObject.GetComponent<Rigidbody2D>().velocity;
 
-            if (movement.x == 0 && movement.y <= 0)
+            if (movement.x == 0 && movement.y == 0)
             {
                 rate = -0.005f;
             }
