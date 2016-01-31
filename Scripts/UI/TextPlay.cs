@@ -11,6 +11,7 @@ public class TextPlay : MonoBehaviour {
 	public GameObject audiosrc;
 	public bool playText = false;
 	public int blackIndex = 5;
+	public Font error;
 
 	private Text txt;
 	private int index = 0;
@@ -48,6 +49,11 @@ public class TextPlay : MonoBehaviour {
 
 	void PlayText()
 	{
-		txt.text += displayText[index].Substring (txt.text.Length, 1);
+		string a = displayText[index].Substring (txt.text.Length, 1);
+		if (a == "#")
+		{
+			txt.font = error;
+		}
+		txt.text += a;
 	}
 }
