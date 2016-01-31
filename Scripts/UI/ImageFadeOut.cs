@@ -8,5 +8,9 @@ public class ImageFadeOut : MonoBehaviour {
 	void Update () 
 	{
 		GetComponent<Image>().color -= new Color(0,0,0,0.01f);
+		if (GetComponent<Image>().color.a == 0)
+		{
+			this.enabled = false;
+		}
 	}
 }

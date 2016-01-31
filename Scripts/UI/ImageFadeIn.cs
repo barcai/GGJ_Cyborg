@@ -1,22 +1,17 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 
 public class ImageFadeIn : MonoBehaviour {
-	
-	private int frameBuffer;
-	public Text died;
-	
-	// Update is called once per frame
+
+	public int level_to_load;
+
 	void Update () 
 	{
 		GetComponent<Image>().color += new Color(0,0,0,0.01f);
-		died.GetComponent<Text>().color += new Color(0,0,0,0.01f);
-
-		if (GetComponent<Image>().color.a >= 1 && Input.GetButtonDown ("Submit"))
+		if (GetComponent<Image>().color.a > 0.95)
 		{
-			int a = Application.loadedLevel;
-			Application.LoadLevel(a);
+			Application.LoadLevel(level_to_load);
 		}
 	}
 }

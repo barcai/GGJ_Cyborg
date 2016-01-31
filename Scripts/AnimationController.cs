@@ -8,6 +8,7 @@ public class AnimationController : MonoBehaviour {
 
     private PlayerController controller;
     private Rigidbody2D rb;
+	public GameObject dirLight;
 
 
     // Use this for initialization
@@ -30,12 +31,14 @@ public class AnimationController : MonoBehaviour {
             if (transform.rotation.y != 0)
             {
                 transform.Rotate(new Vector3(0, -180, 0));
+				dirLight.transform.Rotate(new Vector3(0, -180, 0));
             }
             animator.SetBool("Moving", true);
         } else if (rb.velocity.x < -0.5)
         {
             if (transform.rotation.y == 0)
             {
+				dirLight.transform.Rotate(new Vector3(0, 180, 0));
                 transform.Rotate(new Vector3(0, 180, 0));
             }
             animator.SetBool("Moving", true);
@@ -45,7 +48,6 @@ public class AnimationController : MonoBehaviour {
             animator.SetBool("Moving", false);
         }
 
-        Debug.Log(animator.GetBool("JumpButtonPressed") + " " + animator.GetBool("Moving"));
     }
 
     void OnCollisionEnter2D(Collision2D obj)
