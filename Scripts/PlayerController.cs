@@ -12,23 +12,13 @@ public class PlayerController : MonoBehaviour {
 
 	public GameObject mCamera;
 
-	Animator animator;
-
 	private Rigidbody2D rb;
 
 	void Start()
 	{
 		rb = GetComponent<Rigidbody2D>();
-		animator = GetComponent<Animator>();
 	}
 
-
-	// Update is called once per frame
-	void Update() {
-		if (onGround && Input.GetButton ("Jump")) {
-			animator.SetBool("JumpButtonPressed", true);
-		}
-	}
 
 	void FixedUpdate () 
 	{
@@ -79,7 +69,6 @@ public class PlayerController : MonoBehaviour {
 		if (obj.gameObject.tag == "Ground")
 		{
             onGround = true;
-            animator.SetBool("JumpButtonPressed", false);
 		}
 	}
 }
