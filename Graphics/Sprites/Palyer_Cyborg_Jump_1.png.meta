@@ -1,15 +1,12 @@
 fileFormatVersion: 2
-guid: d3ac48d86b5744b458c4761e6780e1f8
-timeCreated: 1454257237
+guid: 8bb95a1215a737f4da51f7c86e8a84b4
+timeCreated: 1454257288
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Player_Run_Cyborg_1_0
-    21300002: Player_Run_Cyborg_1_1
-    21300004: Player_Run_Cyborg_1_2
-    21300006: Player_Run_Cyborg_1_3
-    21300008: Player_Run_Cyborg_1_4
-    21300010: Player_Run_Cyborg_1_5
+    21300000: Palyer_Cyborg_Jump_1_0
+    21300002: Palyer_Cyborg_Jump_1_1
+    21300004: Palyer_Cyborg_Jump_1_2
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -55,17 +52,7 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: Player_Run_Cyborg_1_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 50
-        height: 92
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Player_Run_Cyborg_1_1
+    - name: Palyer_Cyborg_Jump_1_0
       rect:
         serializedVersion: 2
         x: 50
@@ -75,7 +62,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Player_Run_Cyborg_1_2
+    - name: Palyer_Cyborg_Jump_1_1
       rect:
         serializedVersion: 2
         x: 100
@@ -85,30 +72,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Player_Run_Cyborg_1_3
+    - name: Palyer_Cyborg_Jump_1_2
       rect:
         serializedVersion: 2
         x: 150
-        y: 0
-        width: 50
-        height: 92
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Player_Run_Cyborg_1_4
-      rect:
-        serializedVersion: 2
-        x: 200
-        y: 0
-        width: 50
-        height: 92
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Player_Run_Cyborg_1_5
-      rect:
-        serializedVersion: 2
-        x: 250
         y: 0
         width: 50
         height: 92
