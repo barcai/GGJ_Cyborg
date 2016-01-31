@@ -1,12 +1,12 @@
 fileFormatVersion: 2
-guid: 053939ff003f9bd4894a726b60d80931
-timeCreated: 1454258497
+guid: 05e6835d80399d34fa6ad6d8235fa8b1
+timeCreated: 1454258624
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Player_Jump_noLegs_0
-    21300002: Player_Jump_noLegs_1
-    21300004: Player_Jump_noLegs_2
+    21300000: Player_Jump_noArms 1_0
+    21300002: Player_Jump_noArms 1_1
+    21300004: Player_Jump_noArms 1_2
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -52,33 +52,33 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: Player_Jump_noLegs_0
+    - name: Player_Jump_noArms 1_0
       rect:
         serializedVersion: 2
         x: 50
         y: 0
         width: 50
-        height: 50
+        height: 92
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Player_Jump_noLegs_1
+    - name: Player_Jump_noArms 1_1
       rect:
         serializedVersion: 2
         x: 100
         y: 0
         width: 50
-        height: 50
+        height: 92
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Player_Jump_noLegs_2
+    - name: Player_Jump_noArms 1_2
       rect:
         serializedVersion: 2
         x: 150
         y: 0
         width: 50
-        height: 50
+        height: 92
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

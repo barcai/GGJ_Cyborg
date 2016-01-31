@@ -1,12 +1,15 @@
 fileFormatVersion: 2
-guid: 053939ff003f9bd4894a726b60d80931
-timeCreated: 1454258497
+guid: 6bd0334f91649384fbff577a3d7b5ee7
+timeCreated: 1454258544
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Player_Jump_noLegs_0
-    21300002: Player_Jump_noLegs_1
-    21300004: Player_Jump_noLegs_2
+    21300000: Player_Run_No_Leg_1_0
+    21300002: Player_Run_No_Leg_1_1
+    21300004: Player_Run_No_Leg_1_2
+    21300006: Player_Run_No_Leg_1_3
+    21300008: Player_Run_No_Leg_1_4
+    21300010: Player_Run_No_Leg_1_5
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -52,7 +55,17 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: Player_Jump_noLegs_0
+    - name: Player_Run_No_Leg_1_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Player_Run_No_Leg_1_1
       rect:
         serializedVersion: 2
         x: 50
@@ -62,7 +75,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Player_Jump_noLegs_1
+    - name: Player_Run_No_Leg_1_2
       rect:
         serializedVersion: 2
         x: 100
@@ -72,10 +85,30 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Player_Jump_noLegs_2
+    - name: Player_Run_No_Leg_1_3
       rect:
         serializedVersion: 2
         x: 150
+        y: 0
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Player_Run_No_Leg_1_4
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 0
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Player_Run_No_Leg_1_5
+      rect:
+        serializedVersion: 2
+        x: 250
         y: 0
         width: 50
         height: 50
