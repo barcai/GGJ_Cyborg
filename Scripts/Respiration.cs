@@ -8,6 +8,7 @@ public class Respiration : MonoBehaviour {
 	public bool depleting = true;
 	public Slider sld;
 	public GameObject fill;
+    public bool hasLungs = true;
 
 	private PlayerLife pl;
 
@@ -19,6 +20,20 @@ public class Respiration : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
+        if (hasLungs)
+        {
+            Vector2 movement = new Vector2(Input.GetAxis("Horizontal"), 0);
+
+            if (movement.x == 0 && movement.y == 0)
+            {
+                rate = -0.005f;
+            }
+            else
+            {
+                rate = 0.0018f;
+            }
+        }
+
 		if (depleting)
 		{
 			sld.value -= rate;

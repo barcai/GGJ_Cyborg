@@ -13,6 +13,6 @@ public class PlayerLife : MonoBehaviour {
 		{
 			deathImage.SetActive (true);
 			GetComponent<PlayerController>().canControl = false;
-		}	
+		}
 	}
 }

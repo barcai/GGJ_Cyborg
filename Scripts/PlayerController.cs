@@ -77,12 +77,8 @@ public class PlayerController : MonoBehaviour {
 	{
 		if (obj.gameObject.tag == "Ground")
 		{
-            if (gameObject.transform.position.x > obj.gameObject.transform.position.x - obj.gameObject.GetComponent<SpriteRenderer>().bounds.size.x / 2 &&
-                gameObject.transform.position.x < obj.gameObject.transform.position.x + obj.gameObject.GetComponent<SpriteRenderer>().bounds.size.x / 2)
-            {
-                onGround = true;
-                animator.SetBool("JumpButtonPressed", false);
-            }
+            onGround = true;
+            animator.SetBool("JumpButtonPressed", false);
 		}
 	}
 }
