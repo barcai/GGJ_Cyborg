@@ -34,9 +34,10 @@ public class PlayerController : MonoBehaviour {
 		if (canControl) {
 			mCamera.GetComponentInChildren<ScrollingBackground> ().enabled = true;
 
-			// Basic movement
-			Vector2 movement = new Vector2 (Input.GetAxis ("Horizontal"), 0);
-			rb.AddForce (movement * speed);
+            // Basic movement
+            Vector2 movement = new Vector2(Input.GetAxis("Horizontal"), 0);
+            rb.AddForce(movement * speed);
+			
 
 			// Jumping
 			if (onGround && Input.GetButton ("Jump")) {
@@ -76,8 +77,12 @@ public class PlayerController : MonoBehaviour {
 	{
 		if (obj.gameObject.tag == "Ground")
 		{
-            onGround = true;
-            animator.SetBool("JumpButtonPressed", false);
+            if (gameObject.transform.position.x > obj.gameObject.transform.position.x - obj.gameObject.GetComponent<SpriteRenderer>().bounds.size.x / 2 &&
+                gameObject.transform.position.x < obj.gameObject.transform.position.x + obj.gameObject.GetComponent<SpriteRenderer>().bounds.size.x / 2)
+            {
+                onGround = true;
+                animator.SetBool("JumpButtonPressed", false);
+            }
 		}
 	}
 }
