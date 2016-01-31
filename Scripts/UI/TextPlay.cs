@@ -6,12 +6,15 @@ public class TextPlay : MonoBehaviour {
 
 	public string[] displayText;
 	public GameObject txtObj;
-	public GameObject buttons;
+	public GameObject imageBlack;
+	public GameObject container;
+	public GameObject audiosrc;
 	public bool playText = false;
+	public int blackIndex = 5;
 
 	private Text txt;
 	private int index = 0;
-	private int selectionIndex = 4;
+
 
 	// Use this for initialization
 	void Start () 
@@ -23,6 +26,15 @@ public class TextPlay : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
+		if (index == blackIndex) 
+		{
+			imageBlack.SetActive(true);
+			audiosrc.SetActive(false);
+		}
+		if (displayText[index] == "")
+		{
+			imageBlack.GetComponent<SacrificeLimb>().enabled = true;
+		}
 		if (!txt.text.Equals(displayText[index]) && playText)
 		{
 			PlayText ();
@@ -31,11 +43,6 @@ public class TextPlay : MonoBehaviour {
 		{
 			if (!txt.text.Equals (displayText[index])) txt.text = displayText[index];
 			else {index++; txt.text = "";}
-		}
-		if (index == selectionIndex) 
-		{
-			playText = false;
-			buttons.SetActive(true);
 		}
 	}
 
