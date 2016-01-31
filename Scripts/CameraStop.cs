@@ -30,8 +30,8 @@ public class CameraStop : MonoBehaviour {
 		if (obj.tag == "CameraStopper") 
 		{
 			mCamera.GetComponent<CameraController> ().trackPlayer = true;
-			mCamera.GetComponentInChildren<ScrollingBackground>().speed = -0.001f;
-            mCamera.GetComponentInChildren<ScrollingTrees>().speed = 0.035f;
+			mCamera.GetComponentInChildren<ScrollingBackground>().speed = -0.0005f;
+            mCamera.GetComponentInChildren<ScrollingTrees>().speed = 0.01f;
         }
 	}
 }

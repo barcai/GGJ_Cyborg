@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour {
 	public float jumpHeight = 100;
 	public bool canControl = true;
 	public bool onGround = true;
+	public int playerState = 0; // 0 normal, 1 arms_done, 2 legs_done, 3 lungs_done
 
 	public GameObject mCamera;
 

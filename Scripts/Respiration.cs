@@ -24,36 +24,35 @@ public class Respiration : MonoBehaviour {
         {
             Vector2 movement = new Vector2(Input.GetAxis("Horizontal"), 0);
 
-            if (movement.x == 0 && movement.y == 0)
+            if (movement.x == 0 && movement.y <= 0)
             {
                 rate = -0.005f;
             }
             else
             {
-                rate = 0.0018f;
+                rate = 0.0014f;
             }
         }
 
 		if (depleting)
 		{
 			sld.value -= rate;
-
 			fill.GetComponent<Image>().color = new Color32(0, 110, 188, 255);
+		}
 
-			if (sld.value <= 0)
-			{
-				pl.life = 0;
-				depleting = false;
-			}
-			else if (sld.value < 0.2)
-			{
-				fill.GetComponent<Image>().color = Color.red;
-			}
-			else if (sld.value < 0.5)
-			{
-				fill.GetComponent<Image>().color = Color.yellow;
-			}
-
+		
+		if (sld.value <= 0)
+		{
+			pl.life = 0;
+			depleting = false;
+		}
+		else if (sld.value < 0.2)
+		{
+			fill.GetComponent<Image>().color = Color.red;
+		}
+		else if (sld.value < 0.5)
+		{
+			fill.GetComponent<Image>().color = Color.yellow;
 		}
 	}
 
